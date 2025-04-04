@@ -2,8 +2,27 @@ import 'package:flutter/material.dart';
 import 'pages/onboarding_page.dart';
 import 'pages/login_page.dart';
 import 'pages/webview_page.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+
+  // Ensure that the app is in portrait mode
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  // Set the status bar color to transparent
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Color(0xFFFFC900), // Yellow
+      statusBarBrightness: Brightness.light, // For iOS
+    
+      systemNavigationBarColor: Color(0xFFFFC900), // Light gray
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
   runApp(const MainApp());
 }
 
@@ -20,7 +39,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'GBJ Portal',
+      title: 'GBJ Campus',
       theme: ThemeData(
         primaryColor: AppColors.primary,
         colorScheme: ColorScheme.light(

@@ -24,7 +24,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         height: 200,
      
       ),
-      title: 'Welcome to GBJ Portal',
+      title: 'Welcome to GBJ Campus',
       description: 'Your one-stop solution for all your business needs',
     ),
     OnboardingContent(
